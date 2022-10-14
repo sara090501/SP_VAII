@@ -6,8 +6,13 @@
     text-decoration: none;
 }
 
-.header-font {
+.lucida-hw-font {
     font-family: "Lucida Handwriting";
+}
+
+.navbar-font-edit {
+    font-family: "Lucida Console";
+    font-size: large;
 }
 
 @media (max-width: 900px) {

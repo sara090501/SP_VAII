@@ -3,6 +3,15 @@
 }
 
 .no-underline {
-    font-family: "Adobe Myungjo Std M";
     text-decoration: none;
+}
+
+.header-font {
+    font-family: "Lucida Handwriting";
+}
+
+@media (max-width: 900px) {
+    .logo{
+        height: 40px;
+    }
 }

@@ -26,3 +26,7 @@ h1 {
 h3 {
     font-family: "Lucida Console";
 }
+
+.post-padding {
+    padding: 30px 0px 20px;
+}

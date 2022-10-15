@@ -6,17 +6,23 @@
     text-decoration: none;
 }
 
-.lucida-hw-font {
-    font-family: "Lucida Handwriting";
-}
-
-.navbar-font-edit {
-    font-family: "Lucida Console";
-    font-size: large;
-}
-
 @media (max-width: 900px) {
     .logo{
         height: 40px;
     }
+}
+
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+}
+
+h1 {
+    font-family: "Lucida Handwriting";
+}
+
+h3 {
+    font-family: "Lucida Console";
 }

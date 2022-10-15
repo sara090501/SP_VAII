@@ -64,3 +64,13 @@ h2, h3 {
     color: white;
     font-weight: bold;
 }
+
+.contact-labels {
+    font-weight: bold;
+    background-color: saddlebrown;
+    border: saddlebrown;
+}
+
+.padding {
+    padding-top: 30px;
+}

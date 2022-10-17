@@ -80,3 +80,11 @@ h5 {
 .padding {
     padding-top: 22px;
 }
+
+.prevent-select {
+    -webkit-user-select: none;
+}
+
+img {
+    pointer-events: none
+}

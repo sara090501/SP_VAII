@@ -47,6 +47,7 @@
             <ul class="navbar-nav mx-auto">
                 <li class="nav-item"><a class="nav-link" href="?c=home"><h3>Úvod</h3></a></li>
                 <li class="nav-item"><a class="nav-link" href="?c=home&a=offer"><h3>Ponuka</h3></a></li>
+                <li class="nav-item"><a class="nav-link" href="?c=review"><h3>Recenzie</h3></a></li>
                 <li class="nav-item"><a class="nav-link" href="?c=home&a=contact"><h3>Kontakt</h3></a></li>
             </ul>
         </div>

@@ -71,6 +71,13 @@ h5 {
     font-weight: bold;
 }
 
+
+.submit {
+    background-color: saddlebrown;
+    color: white;
+    font-weight: bold;
+}
+
 .contact-labels {
     font-weight: bold;
     background-color: saddlebrown;

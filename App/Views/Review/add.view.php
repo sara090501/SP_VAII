@@ -1,6 +1,6 @@
 <?php /* @var App\Models\Post $data 8*/ ?>
 
-<form action="?c=post&a=add" method="post">
+<form action="?c=review&a=add" method="post">
     <div class="form-group">
         <label for="exampleFormControlInput1">Title</label>
         <input name="title" type="text" class="form-control" id="exampleFormControlInput1">

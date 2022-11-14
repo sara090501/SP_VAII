@@ -39,7 +39,7 @@
                         <p class="card-text mb-auto"><?=$row->getText()?></p>
                     </div>
                     <div class="col-auto d-none d-lg-block">
-                        <img src="public/img/reviewer.png" alt="Coffee Latte" class="bd-placeholder-img post-image">
+                        <img src="public/img/reviewer.png" alt="Reviewer" class="bd-placeholder-img post-image">
                     </div>
                 </div>
             </div>

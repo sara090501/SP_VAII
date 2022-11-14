@@ -14,27 +14,18 @@ class ReviewController extends AControllerBase
         return true;
     }
 
-    /**
-     * Example of an action accessible without authorization
-     * @return \App\Core\Responses\ViewResponse
-     */
-    public function review(): Response
-    {
-
-        return $this->html();
-    }
 
     public function index(): Response
     {
-        $reviews = Review::getAll();
-        return $this->html($reviews);
+        $review = Post::getAll();
+        return $this->html($review);
     }
 
     public function add(): Response
     {
         $data = $this->request()->getPost();
         if (isset($data["title"])) {
-            $review = new Review();
+            $review = new Post();
             $review->setTitle($data["title"]);
             $review->setText($data["text"]);
             $review->save();

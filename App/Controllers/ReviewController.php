@@ -25,7 +25,7 @@ class ReviewController extends AControllerBase
     {
         $data = $this->request()->getPost();
         if (isset($data["title"])) {
-            $review = new Post();
+            $review = new Review();
             $review->setTitle($data["title"]);
             $review->setText($data["text"]);
             $review->save();

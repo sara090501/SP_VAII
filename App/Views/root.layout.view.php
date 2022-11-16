@@ -2,10 +2,6 @@
 /** @var string $contentHTML */
 /** @var \App\Core\IAuthenticator $auth */
 ?>
-<?php
-/** @var string $contentHTML */
-/** @var \App\Core\IAuthenticator $auth */
-?>
 <!DOCTYPE html>
 <html lang="sk">
 <head>
@@ -33,6 +29,7 @@
                 <a class="blog-header-logo text-dark no-underline"><h1>CoffeeHouse</h1></a>
             </div>
             <div class="col-3 d-flex justify-content-end align-items-center">
+                <a class="btn btn-sm btn-outline-secondary button" href="public/html/Login.html">Používateľ</a>
                 <a class="btn btn-sm btn-outline-secondary button" href="public/html/Login.html">Prihlásenie</a>
             </div>
         </div>

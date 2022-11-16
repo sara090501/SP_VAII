@@ -23,7 +23,7 @@
                         <div class="col p-4 d-flex flex-column position-static">
                             <h3 class="mb-0"><?=$row->getName()?></h3>
                             <p class="card-text mb-auto"><?=$row->getDescription()?></p>
-                            <p href="#" class="change-color-to-brown"><?=$row->getPrice()?>€</p>
+                            <a href="#" class="stretched-link change-color-to-brown">Dozvedieť sa viac...</a>
                         </div>
                         <div class="col-auto d-none d-lg-block">
                             <img src="<?=$row->getImgpath()?>" alt="Product" class="bd-placeholder-img post-image">

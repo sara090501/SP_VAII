@@ -17,7 +17,7 @@ class ReviewController extends AControllerBase
 
     public function index(): Response
     {
-        $review = Post::getAll();
+        $review = Review::getAll();
         return $this->html($review);
     }
 

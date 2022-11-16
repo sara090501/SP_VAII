@@ -1,4 +1,4 @@
-<?php /** @var Array $data */ ?>
+<?php /** @var \App\Models\Review[] $data */ ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>

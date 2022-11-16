@@ -4,8 +4,7 @@ namespace App\Controllers;
 
 use App\Core\AControllerBase;
 use App\Core\Responses\Response;
-use App\Models\Post;
-use App\Models\Review;
+use App\Models\Offer;
 
 class OfferController extends AControllerBase
 {
@@ -20,7 +19,8 @@ class OfferController extends AControllerBase
      */
     public function index(): Response
     {
-        return $this->html();
+        $offer = Offer::getAll();
+        return $this->html($offer);
     }
 
 }

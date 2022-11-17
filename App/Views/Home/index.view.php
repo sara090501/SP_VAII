@@ -15,8 +15,6 @@
 
 <body>
 
-<main class="container prevent-select">
-
     <div><img src="public/img/coffeeHeartFlower.jpg" alt="coffeeHeartFlower" class="center-photo"></div>
     <div class="row mb-2 post-padding">
         <div class="col-md-6">
@@ -24,7 +22,7 @@
                 <div class="col p-4 d-flex flex-column position-static">
                     <h3 class="mb-0">Ponuka</h3>
                     <h5 class="card-text mb-auto">Naša kaviareň ponúka široké spektrum káv. Na svoje si príde aj ten najmlsnejší jazýček!</h5>
-                    <a href="?c=home&a=offer" class="stretched-link change-color-to-brown">Čítať ďalej...</a>
+                    <a href="?c=offer" class="stretched-link change-color-to-brown">Čítať ďalej...</a>
                 </div>
                 <div class="col-auto d-none d-lg-block">
                     <img src="public/img/coffeelatte.jpg" alt="Coffee Latte" class="bd-placeholder-img post-image">
@@ -36,7 +34,7 @@
                 <div class="col p-4 d-flex flex-column position-static">
                     <h3 class="mb-0">Kontakt</h3>
                     <h5 class="card-text mb-auto">Podeľte sa s nami o svoje návrhy pre našu kaviareň!</h5>
-                    <a href="?c=home&a=contact" class="stretched-link change-color-to-brown">Čítať ďalej...</a>
+                    <a href="?c=contact" class="stretched-link change-color-to-brown">Čítať ďalej...</a>
                 </div>
                 <div class="col-auto d-none d-lg-block">
                     <img src="public/img/contactHomePage.jpg" alt="Coffee Latte" class="bd-placeholder-img post-image">
@@ -75,8 +73,6 @@
             </div>
         </div>
     </div>
-
-</main>
 
 </body>
 </html>

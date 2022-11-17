@@ -1,4 +1,6 @@
-<?php /** @var \App\Models\Review[] $data */ ?>
+<?php /** @var \App\Models\Review[] $data */
+/** @var \App\Core\IAuthenticator $auth */
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,7 +18,6 @@
 
 <body>
 
-<main class="container">
 <a class="btn btn-sm btn-outline-secondary center-photo button" href="?c=review&a=add">Pridať recenziu</a>
 <div class="row mb-2 post-padding">
 
@@ -26,6 +27,9 @@
             <div class="col p-4 d-flex flex-column position-static">
                 <h3 class="mb-0"><?=$row->getTitle()?></h3>
                 <p class="card-text mb-auto"><?=$row->getText()?></p>
+                <?php if ($auth->isLogged()) { ?>
+                    <button type="submit" class="btn btn-sm btn-outline-secondary submit button">Odstrániť</button>
+                <?php } ?>
             </div>
             <div class="col-auto d-none d-lg-block">
                 <img src="public/img/reviewer.png" alt="Reviewer" class="bd-placeholder-img post-image">
@@ -35,6 +39,5 @@
 <?php } ?>
 
 </div>
-</main>
 
 </body>

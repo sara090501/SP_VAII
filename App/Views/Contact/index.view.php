@@ -25,11 +25,11 @@
                     <form>
                         <div class="form-group">
                             <label for="name">Meno</label>
-                            <input type="text" class="form-control" id="name" placeholder="Enter name" required="">
+                            <input type="text" class="form-control" id="name" placeholder="Vložte meno" required="">
                         </div>
                         <div class="form-group">
                             <label for="email">E-mailová adresa</label>
-                            <input type="email" class="form-control" id="email" placeholder="Enter email" required="">
+                            <input type="email" class="form-control" id="email" placeholder="Vložte email" required="">
                         </div>
                         <div class="form-group">
                             <label for="message">Správa</label>

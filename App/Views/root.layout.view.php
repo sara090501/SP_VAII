@@ -3,20 +3,21 @@
 /** @var \App\Core\IAuthenticator $auth */
 ?>
 <!DOCTYPE html>
-<html lang="sk">
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
     <title><?= \App\Config\Configuration::APP_NAME ?></title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
-          integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
-            crossorigin="anonymous"></script>
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-            integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-            crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.3/dist/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
     <link rel="stylesheet" href="public/css/styl.css">
-    <script src="public/js/script.js"></script>
 </head>
+
 <body>
 <div class="container prevent-select">
 
@@ -29,8 +30,20 @@
                 <a class="blog-header-logo text-dark no-underline"><h1>CoffeeHouse</h1></a>
             </div>
             <div class="col-3 d-flex justify-content-end align-items-center">
-                <a class="btn btn-sm btn-outline-secondary button" href="public/html/Login.html">Používateľ</a>
-                <a class="btn btn-sm btn-outline-secondary button" href="public/html/Login.html">Prihlásenie</a>
+                <?php if ($auth->isLogged()) { ?>
+                    <span class="navbar-text"><h3><?= $auth->getLoggedUserName() ?></h3></span>
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="btn btn-sm btn-outline-secondary button" href="?c=auth&a=logout">Odhlásenie</a>
+                        </li>
+                    </ul>
+                <?php } else { ?>
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="btn btn-sm btn-outline-secondary button" href="<?= \App\Config\Configuration::LOGIN_URL ?>">Prihlásenie</a>
+                        </li>
+                    </ul>
+                <?php } ?>
             </div>
         </div>
     </header>
@@ -53,11 +66,13 @@
 </div>
 </nav>
 
-<div class="container-fluid mt-3">
-    <div class="web-content">
-        <?= $contentHTML ?>
+<main class="container">
+    <div class="container-fluid mt-3">
+        <div class="web-content">
+            <?= $contentHTML ?>
+        </div>
     </div>
-</div>
+</main>
 
 <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
     <div class="col-md-4 d-flex align-items-center">

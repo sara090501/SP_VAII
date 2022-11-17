@@ -1,4 +1,7 @@
-<?php /** @var \App\Models\Offer[] $data */ ?>
+<?php /** @var \App\Models\Offer[] $data */
+/** @var \App\Core\IAuthenticator $auth */
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -22,7 +25,12 @@
                     <div class="col p-4 d-flex flex-column position-static">
                         <h3 class="mb-0"><?=$row->getName()?></h3>
                         <p class="card-text mb-auto"><?=$row->getDescription()?></p>
-                        <p href="#" class="change-color-to-brown"><?=$row->getPrice()?>€</p>
+                        <p href="#" class="change-color-to-brown"><?=$row->getPrice()?>€
+                        <?php if ($auth->isLogged()) { ?>
+                            <a class="link-secondary" href="?c=offer&a=edit&id=<?=$row->getId()?>"><img class="logo small-icon" src="public/img/editIcon.png" alt="Logo"></a>
+                            <a class="link-secondary" href="?c=offer&a=delete&id=<?=$row->getId()?>"><img class="logo small-icon" src="public/img/deleteIcon.jpg" alt="Logo"></a>
+                        <?php } ?>
+                        </p>
                     </div>
                     <div class="col-auto d-none d-lg-block">
                         <img src="<?=$row->getImgpath()?>" alt="Product" class="bd-placeholder-img post-image">

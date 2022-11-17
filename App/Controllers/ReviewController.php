@@ -34,4 +34,15 @@ class ReviewController extends AControllerBase
         return $this->html();
     }
 
+    public function delete(): Response
+    {
+        $id = $this->request()->getValue("id");
+        $review = Review::getOne($id);
+        if($review != null){
+            $review->delete();
+        }
+
+        return $this->redirect("?c=review");
+    }
+
 }

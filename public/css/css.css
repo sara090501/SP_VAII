@@ -49,6 +49,10 @@ h5 {
     text-align: center;
 }
 
+.center-left {
+    text-align: left;
+}
+
 .icon-size {
     width: 30px;
     height: 30px;
@@ -103,4 +107,9 @@ img {
     left: 50%;
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
+}
+
+.small-icon {
+    width: 40px;
+    height: 40px;
 }

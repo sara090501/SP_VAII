@@ -38,6 +38,25 @@ class OfferController extends AControllerBase
         return $this->html();
     }
 
+    public function edit(): Response
+    {
+        $id = $this->request()->getValue("id");
+        $offer = Offer::getOne($id);
+        $data = $this->request()->getPost();
+        if($offer != null){
+            if(isset($data["name"])){ //isset ci exizstuje a empty ci ej zadane cosi
+                $offer->setName($data["name"]);
+                $offer->setDescription($data["description"]);
+                $offer->setImgpath($data["imgpath"]);
+                $offer->setPrice($data["price"]);
+                $offer->save();
+                return $this->redirect("?c=offer");
+            }
+        }
+
+        return $this->html($offer,"add");
+    }
+
     public function delete(): Response
     {
         $id = $this->request()->getValue("id");

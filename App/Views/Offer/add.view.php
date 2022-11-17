@@ -17,7 +17,7 @@
 
 <body>
 <div class="container">
-    <form action="?c=review&a=add" method="post">
+    <form action="?c=offer&a=add" method="post">
         <div class="form-group">
             <label for="exampleFormControlInput1">Vaše meno</label>
             <input name="title" type="text" class="form-control" id="exampleFormControlInput1">

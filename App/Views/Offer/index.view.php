@@ -27,7 +27,6 @@
                         <p class="card-text mb-auto"><?=$row->getDescription()?></p>
                         <p href="#" class="change-color-to-brown"><?=$row->getPrice()?>€
                         <?php if ($auth->isLogged()) { ?>
-                            <a class="link-secondary" href="?c=offer&a=add"><img class="logo small-icon" src="public/img/plusIcon.png" alt="Logo"></a>
                             <a class="link-secondary" href="?c=offer&a=edit&id=<?=$row->getId()?>"><img class="logo small-icon" src="public/img/editIcon.png" alt="Logo"></a>
                             <a class="link-secondary" href="?c=offer&a=delete&id=<?=$row->getId()?>"><img class="logo small-icon" src="public/img/deleteIcon.jpg" alt="Logo"></a>
                         <?php } ?>
@@ -40,4 +39,10 @@
             </div>
         <?php } ?>
     </div>
+
+    <?php if ($auth->isLogged()) { ?>
+        <br>
+        <a class="link-secondary" href="?c=offer&a=add"><img class="logo bigger-icon center-photo" src="public/img/plusIcon.png" alt="Logo"></a>
+        <br>
+    <?php } ?>
 </body>

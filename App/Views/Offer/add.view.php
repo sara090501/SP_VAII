@@ -1,4 +1,4 @@
-<?php /* @var App\Models\Post $data 8*/ ?>
+<?php /* @var App\Models\Offer $data 8*/ ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -26,7 +26,7 @@
             <label for="exampleFormControlTextarea1">Recenzia</label>
             <textarea name="text" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
         </div>
-        <button type="submit" class="btn btn-sm btn-outline-secondary submit button">Odoslať</button>
+        <button type="submit" class="btn btn-sm btn-outline-secondary submit button">Pokus</button>
     </form>
 </div>
 </body>

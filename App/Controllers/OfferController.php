@@ -43,8 +43,8 @@ class OfferController extends AControllerBase
         $id = $this->request()->getValue("id");
         $offer = Offer::getOne($id);
         $data = $this->request()->getPost();
-        if($offer != null){
-            if(isset($data["name"])){ //isset ci exizstuje a empty ci ej zadane cosi
+        if($offer != null) {
+            if(isset($data["name"])){ //isset ci existuje a empty ci ej zadane cosi
                 $offer->setName($data["name"]);
                 $offer->setDescription($data["description"]);
                 $offer->setImgpath($data["imgpath"]);
@@ -54,7 +54,7 @@ class OfferController extends AControllerBase
             }
         }
 
-        return $this->html($offer,"add");
+        return $this->html($offer,"edit");
     }
 
     public function delete(): Response

@@ -21,7 +21,7 @@
         <div class="row">
             <div class="col">
                 <div>
-                    <h3>Ste úspešne <strong>zaregistrovaný!</strong></h3></strong>
+                    <h3>Registrácia prebehla úspešne!</h3></strong>
                 </div>
             </div>
         </div>

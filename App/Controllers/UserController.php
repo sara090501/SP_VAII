@@ -39,10 +39,25 @@ class UserController extends AControllerBase
             $user->setLastName($data["lastName"]);
             $user->setEmail($data["email"]);
             $user->setPhoneNumber($data["phoneNumber"]);
-            $user->save();
-            return $this->redirect("?c=user&a=succeedRegistration");
+
+            $email = $_POST['email'];
+            $phoneNumber = $_POST['phoneNumber'];
+
+            if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+                echo "<br><div class='center red-text'>Zadali ste zlý email</div>";
+            } else if (!preg_match("/^[+]421[0-9]{9}$/", $phoneNumber)) {
+                echo "<br><div class='center red-text'>Zadali ste zlé telefónne číslo</div>";
+            } else {
+                $user->save();
+                return $this->redirect("?c=user&a=succeedRegistration");
+            }
         }
 
+        return $this->html();
+    }
+
+    public function succeedRegistration(): Response
+    {
         return $this->html();
     }
 

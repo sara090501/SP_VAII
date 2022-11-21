@@ -40,10 +40,16 @@ class UserController extends AControllerBase
             $user->setEmail($data["email"]);
             $user->setPhoneNumber($data["phoneNumber"]);
 
+            $firstName = $_POST['firstName'];
+            $lastName = $_POST['lastName'];
             $email = $_POST['email'];
             $phoneNumber = $_POST['phoneNumber'];
 
-            if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+            if (!preg_match("/[A-Z][a-z]/", $firstName)) {
+                echo "<br><div class='center red-text'>Zadali nesprávny formát mena</div>";
+            } else if (!preg_match("/[A-Z][a-z]/", $lastName)) {
+                echo "<br><div class='center red-text'>Zadali nesprávny formát priezviska</div>";
+            } else if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
                 echo "<br><div class='center red-text'>Zadali ste zlý email</div>";
             } else if (!preg_match("/^[+]421[0-9]{9}$/", $phoneNumber)) {
                 echo "<br><div class='center red-text'>Zadali ste zlé telefónne číslo</div>";

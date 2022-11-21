@@ -37,6 +37,6 @@
             <label for="exampleFormControlTextarea1">Cena produktu</label>
             <textarea name="price" class="form-control" id="exampleFormControlTextarea1" rows="3"><?=$data->getPrice()?></textarea>
         </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <button type="submit" class="btn btn-sm btn-outline-secondary submit button">Potvrdiť</button>
     </form>
 </body>

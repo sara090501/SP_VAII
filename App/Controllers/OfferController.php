@@ -32,8 +32,19 @@ class OfferController extends AControllerBase
             $offer->setDescription($data["description"]);
             $offer->setImgpath($data["imgpath"]);
             $offer->setPrice($data["price"]);
-            $offer->save();
-            return $this->redirect("?c=offer");
+
+            $name = $_POST['name'];
+            $price = $_POST['price'];
+
+
+            if (!preg_match("/[A-Z][a-z]/", $name)) {
+                echo "<br><div class='center red-text'>Zadali ste nesprávny formát mena</div>";
+            } else if (!preg_match("/^([1-9][0-9]*|0)(\.[0-9]{2})?$/", $price)) {
+                echo "<br><div class='center red-text'>Zadali ste nesprávny formát ceny</div>";
+            } else {
+                $offer->save();
+                return $this->redirect("?c=offer");
+            }
         }
         return $this->html();
     }
@@ -49,8 +60,19 @@ class OfferController extends AControllerBase
                 $offer->setDescription($data["description"]);
                 $offer->setImgpath($data["imgpath"]);
                 $offer->setPrice($data["price"]);
-                $offer->save();
-                return $this->redirect("?c=offer");
+
+                $name = $_POST['name'];
+                $price = $_POST['price'];
+
+
+                if (!preg_match("/[A-Z][a-z]/", $name)) {
+                    echo "<br><div class='center red-text'>Zadali ste nesprávny formát mena</div>";
+                } else if (!preg_match("/^([1-9][0-9]*|0)(\.[0-9]{2})?$/", $price)) {
+                    echo "<br><div class='center red-text'>Zadali ste nesprávny formát ceny</div>";
+                } else {
+                    $offer->save();
+                    return $this->redirect("?c=offer");
+                }
             }
         }
 

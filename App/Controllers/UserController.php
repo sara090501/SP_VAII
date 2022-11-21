@@ -46,9 +46,9 @@ class UserController extends AControllerBase
             $phoneNumber = $_POST['phoneNumber'];
 
             if (!preg_match("/[A-Z][a-z]/", $firstName)) {
-                echo "<br><div class='center red-text'>Zadali nesprávny formát mena</div>";
+                echo "<br><div class='center red-text'>Zadali ste nesprávny formát mena</div>";
             } else if (!preg_match("/[A-Z][a-z]/", $lastName)) {
-                echo "<br><div class='center red-text'>Zadali nesprávny formát priezviska</div>";
+                echo "<br><div class='center red-text'>Zadali ste nesprávny formát priezviska</div>";
             } else if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
                 echo "<br><div class='center red-text'>Zadali ste zlý email</div>";
             } else if (!preg_match("/^[+]421[0-9]{9}$/", $phoneNumber)) {

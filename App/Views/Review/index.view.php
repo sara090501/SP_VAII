@@ -25,7 +25,7 @@
     <div class="col-md-6">
         <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
             <div class="col p-4 d-flex flex-column position-static">
-                <h3 class="mb-0"><?=$row->getTitle()?></h3>
+                <h3 class="mb-0"><?=$row->getName()?></h3>
                 <p class="card-text mb-auto"><?=$row->getText()?></p>
                 <?php if ($auth->isLogged()) { ?>
                     <a class="btn btn-sm btn-outline-secondary button" href="?c=review&a=delete&id=<?=$row->getId()?>">Odstrániť</a>

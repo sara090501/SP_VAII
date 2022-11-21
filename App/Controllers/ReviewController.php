@@ -24,9 +24,9 @@ class ReviewController extends AControllerBase
     public function add(): Response
     {
         $data = $this->request()->getPost();
-        if (isset($data["title"])) {
+        if (isset($data["name"])) {
             $review = new Review();
-            $review->setTitle($data["title"]);
+            $review->setName($data["name"]);
             $review->setText($data["text"]);
             $review->save();
             return $this->redirect("?c=review");

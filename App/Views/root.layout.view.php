@@ -40,6 +40,7 @@
                 <?php } else { ?>
                     <ul class="navbar-nav ms-auto">
                         <li class="nav-item">
+                            <a class="btn btn-sm btn-outline-secondary button" href="?c=user&a=registration">Registrácia</a>
                             <a class="btn btn-sm btn-outline-secondary button" href="<?= \App\Config\Configuration::LOGIN_URL ?>">Prihlásenie</a>
                         </li>
                     </ul>

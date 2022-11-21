@@ -7,7 +7,7 @@ use App\Core\Model;
 class Review extends Model
 {
     protected int $id;
-    protected string $title;
+    protected string $name;
     protected string $text;
 
     /**
@@ -29,17 +29,17 @@ class Review extends Model
     /**
      * @return string
      */
-    public function getTitle(): string
+    public function getName(): string
     {
-        return $this->title;
+        return $this->name;
     }
 
     /**
-     * @param string $title
+     * @param string $name
      */
-    public function setTitle(string $title): void
+    public function setName(string $name): void
     {
-        $this->title = $title;
+        $this->name = $name;
     }
 
     /**

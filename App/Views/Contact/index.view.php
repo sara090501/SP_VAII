@@ -25,15 +25,15 @@
                     <form>
                         <div class="form-group">
                             <label for="name">Meno</label>
-                            <input type="text" class="form-control" id="name" placeholder="Vložte meno" required="">
+                            <input type="name" class="form-control" id="name" placeholder="Vložte meno" id="name" required="">
                         </div>
                         <div class="form-group">
                             <label for="email">E-mailová adresa</label>
-                            <input type="email" class="form-control" id="email" placeholder="Vložte email" required="">
+                            <input type="email" class="form-control" id="email" placeholder="Vložte email" id="email" required="">
                         </div>
                         <div class="form-group">
                             <label for="message">Správa</label>
-                            <textarea class="form-control" id="message" rows="6" required=""></textarea>
+                            <textarea type="message" class="form-control" id="message" rows="6" id="message" required=""></textarea>
                         </div>
                         <div class="mx-auto">
                             <button type="submit" class="btn btn-primary text-right contact-labels">Odoslať</button></div>

@@ -4,8 +4,7 @@ namespace App\Controllers;
 
 use App\Core\AControllerBase;
 use App\Core\Responses\Response;
-use App\Models\Post;
-use App\Models\Review;
+use App\Models\Contact;
 
 class ContactController extends AControllerBase
 {
@@ -18,15 +17,31 @@ class ContactController extends AControllerBase
      * Example of an action accessible without authorization
      * @return \App\Core\Responses\ViewResponse
      */
-    public function contact(): Response
-    {
-
-        return $this->html();
-    }
 
     public function index(): Response
     {
         return $this->html();
     }
 
+    public function add(): Response
+    {
+        $data = $this->request()->getPost();
+        if (isset($data["name"])) {
+            $contact = new Contact();
+            $contact->setName($data["name"]);
+            $contact->setEmail($data["email"]);
+            $contact->setMessage($data["message"]);
+
+            $name = $_POST['name'];
+
+
+            if (!preg_match("/[A-Z][a-z]/", $name)) {
+                echo "<br><div class='center red-text'>Zadali ste nesprávny formát mena</div>";
+            } else {
+                $contact->save();
+                return $this->redirect("?c=contact");
+            }
+        }
+        return $this->html();
+    }
 }

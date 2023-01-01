@@ -2,6 +2,25 @@
 /** @var Array $data */
 ?>
 
+<script>
+    function showSuggestions(str) {
+        if (str.length === 0) {
+            document.getElementById('output').innerHTML = '';
+        } else {
+            var xmlHttp = new XMLHttpRequest();
+            //onreadystatechange - defines a function to be called when the readyState property changes
+            xmlHttp.onreadystatechange = function () {
+                //4: request finished and response is ready, 200: "OK"
+                if (xmlHttp.readyState === 4 && xmlHttp.status === 200) {
+                    document.getElementById('output').innerHTML = this.responseText;
+                }
+            }
+            xmlHttp.open("GET", "App/Views/User/suggest.php?q="+str, true);
+            xmlHttp.send();
+        }
+    }
+</script>
+
 <div class="container">
     <div class="row">
         <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
@@ -12,7 +31,9 @@
                         <div class="form-group">
                             <label for="firstName">Meno</label>
                             <p id="firstName-input" hidden></p>
-                            <input name="firstName" type="text" class="form-control" placeholder="Janko" id="firstName">
+                            <input name="firstName" type="text" class="form-control" placeholder="Janko" id="firstName"
+                            onkeyup="showSuggestions(this.value)">
+                            <p>Suggestions: <span id="output"></span></p>
                         </div>
                         <div class="form-group">
                             <label for="lastName">Priezvisko</label>

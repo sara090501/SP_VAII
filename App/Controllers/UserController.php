@@ -38,11 +38,13 @@ class UserController extends AControllerBase
             $user->setFirstName($data["firstName"]);
             $user->setLastName($data["lastName"]);
             $user->setEmail($data["email"]);
+            $user->setPassword($data["password"]);
             $user->setPhoneNumber($data["phoneNumber"]);
 
             $firstName = $_POST['firstName'];
             $lastName = $_POST['lastName'];
             $email = $_POST['email'];
+            $password = $_POST['password'];
             $phoneNumber = $_POST['phoneNumber'];
 
             if (!preg_match("/[A-Z ÁÉÍÓÚŽČŠ][a-z áéíóúžčš]/", $firstName)) {

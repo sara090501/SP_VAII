@@ -10,6 +10,7 @@ class User extends Model
     protected string $firstName;
     protected string $lastName;
     protected string $email;
+    protected string $password;
     protected string $phoneNumber;
 
     /**
@@ -74,6 +75,22 @@ class User extends Model
     public function setEmail(string $email): void
     {
         $this->email = $email;
+    }
+
+    /**
+     * @return string
+     */
+    public function getPassword(): string
+    {
+        return $this->password;
+    }
+
+    /**
+     * @param string $password
+     */
+    public function setPassword(string $password): void
+    {
+        $this->password = $password;
     }
 
     /**

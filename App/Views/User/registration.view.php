@@ -19,6 +19,15 @@
             xmlHttp.send();
         }
     }
+
+    function visibilityOfPassword() {
+        const password = document.getElementById("password");
+        if (password.type === "password") {
+            password.type = "text";
+        } else {
+            password.type = "password";
+        }
+    }
 </script>
 
 <div class="container">
@@ -44,6 +53,14 @@
                             <label for="email">Email</label>
                             <p id="email-input" hidden></p>
                             <input name="email" type="text" class="form-control" placeholder="janko.mrkvicka@example.com" id="email">
+                        </div>
+                        <div class="form-group">
+                            <label for="password">Heslo</label>
+                            <p id="password-input" hidden></p>
+                            <input name="password" type="password" id="password" class="form-control">
+                            <label for="password-checkbox">Email</label>
+                            <input id="password-checkbox" type="checkbox" onclick="visibilityOfPassword()">
+                            <img class="icon-size" src="public/img/passwordOpenEyeIcon.png" alt="Password Open Eye Icon">
                         </div>
                         <div class="form-group">
                             <label for="phoneNumber">Telefónne číslo</label>

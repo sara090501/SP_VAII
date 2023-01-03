@@ -2,6 +2,15 @@
 /** @var \App\Core\IAuthenticator $auth */
 ?>
 
+<script src="public/js/registration.js"></script>
+
+<div class="center">
+    <form method="get" action="">
+        <input type="text" placeholder="Search" onkeyup="showSuggestions(this.value)">
+        <p>Suggestions: <span id="output"></span></p>
+    </form>
+</div>
+<br>
 <div class="row mb-2">
     <?php foreach ($data as $row) { ?>
         <div class="col-md-6">

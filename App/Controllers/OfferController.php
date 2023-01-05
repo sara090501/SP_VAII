@@ -3,6 +3,7 @@
 namespace App\Controllers;
 
 use App\Core\AControllerBase;
+use App\Core\Responses\JsonResponse;
 use App\Core\Responses\Response;
 use App\Models\Offer;
 
@@ -21,6 +22,16 @@ class OfferController extends AControllerBase
     {
         $offer = Offer::getAll();
         return $this->html($offer);
+    }
+
+    /**
+     * Vráti zoznam všetkých ponúk
+     * @return JsonResponse
+     * @throws \Exception
+     */
+    public function offers() : JsonResponse
+    {
+        return $this->json(['offers' => Offer::getAll()]);
     }
 
     public function add(): Response

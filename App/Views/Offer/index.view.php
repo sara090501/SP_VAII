@@ -6,12 +6,12 @@
 
 <div class="center">
     <form method="get" action="">
-        <input type="text" placeholder="Search" onkeyup="showSuggestions(this.value)">
+        <input type="text" id="search-offers" placeholder="Search" onkeyup="showSuggestions(this.value)">
         <p>Suggestions: <span id="output"></span></p>
     </form>
 </div>
 <br>
-<div class="row mb-2">
+<div class="row mb-2" id="offer-list">
     <?php foreach ($data as $row) { ?>
         <div class="col-md-6">
             <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">

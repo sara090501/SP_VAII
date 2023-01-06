@@ -5,7 +5,7 @@
         <div class="row">
             <div class="col">
                 <div>
-                    <h3>Vitaj, <strong><?= $auth->getLoggedUserName()?>!</strong></h3></strong>
+                    <h3>Vitaj, <strong><?= $auth->getLoggedFirstName()?> <?= $auth->getLoggedLastName()?>!</strong></h3></strong>
                 </div>
             </div>
         </div>

@@ -20,7 +20,7 @@
                     <p class="card-text mb-auto"><?=$row->getDescription()?></p>
                     <p href="#" class="change-color-to-brown"><?=$row->getPrice()?>€
                     <?php if ($auth->isLogged()) { ?>
-                        <?php if ($auth->getLoggedUserName() == 'admin') { ?>
+                        <?php if ($auth->getLoggedLogin() == 'admin') { ?>
                         <a class="link-secondary" href="?c=offer&a=edit&id=<?=$row->getId()?>"><img class="logo small-icon" src="public/img/editIcon.png" alt="Logo"></a>
                         <a class="link-secondary" href="?c=offer&a=delete&id=<?=$row->getId()?>"><img class="logo small-icon" src="public/img/deleteIcon.jpg" alt="Logo"></a>
                     <?php } ?> <?php } ?>

@@ -63,7 +63,17 @@ class DBAuthenticator implements IAuthenticator
         return isset($_SESSION['user']) && $_SESSION['user'] != null;
     }
 
-    function getLoggedUserName(): string
+    function getLoggedFirstName(): string
+    {
+        return $_SESSION['user']->getFirstName() ?? throw new \Exception("User not logged in");
+    }
+
+    function getLoggedLastName(): string
+    {
+        return $_SESSION['user']->getLastName() ?? throw new \Exception("User not logged in");
+    }
+
+    function getLoggedLogin(): string
     {
         return $_SESSION['user']->getLogin() ?? throw new \Exception("User not logged in");
     }

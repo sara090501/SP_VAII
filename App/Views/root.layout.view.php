@@ -32,7 +32,7 @@
             </div>
             <div class="col-3 d-flex justify-content-end align-items-center">
                 <?php if ($auth->isLogged()) { ?>
-                    <span class="navbar-text"><h3><?= $auth->getLoggedUserName() ?></h3></span>
+                    <span class="navbar-text"><h3><?= $auth->getLoggedLogin() ?></h3></span>
                     <ul class="navbar-nav ms-auto">
                         <li class="nav-item">
                             <a class="btn btn-sm btn-outline-secondary button" href="?c=auth&a=logout">Odhlásenie</a>

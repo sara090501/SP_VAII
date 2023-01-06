@@ -31,7 +31,7 @@
             </div>
             <div class="col-3 d-flex justify-content-end align-items-center">
                 <?php if ($auth->isLogged()) { ?>
-                    <span class="navbar-text"><b><?= $auth->getLoggedUserName() ?></b></span>
+                    <span class="navbar-text"><b><?= $auth->getLoggedLogin() ?></b></span>
                     <ul class="navbar-nav ms-auto">
                         <li class="nav-item">
                             <a class="btn btn-sm btn-outline-secondary button" href="?c=auth&a=logout">Odhlásenie</a>

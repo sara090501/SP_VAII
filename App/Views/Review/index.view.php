@@ -12,8 +12,9 @@
                 <p class="card-text mb-auto"><?=$row->getText()?></p>
                 <?php if ($auth->isLogged()) { ?>
                     <?php if ($auth->getLoggedLogin() == 'admin') { ?>
-                    <a class="btn btn-sm btn-outline-secondary button" href="?c=review&a=delete&id=<?=$row->getId()?>">Odstrániť</a>
-                <?php } ?> <?php } ?>
+                        <a class="btn btn-sm btn-outline-secondary button" href="?c=review&a=delete&id=<?=$row->getId()?>">Odstrániť</a>
+                    <?php } ?>
+                <?php } ?>
             </div>
             <div class="col-auto d-none d-lg-block">
                 <img src="public/img/reviewer.png" alt="Reviewer" class="bd-placeholder-img post-image">

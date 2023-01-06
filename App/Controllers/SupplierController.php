@@ -25,11 +25,9 @@ class SupplierController extends AControllerBase
         return $this->html();
     }
 
-    public function supplier() : JsonResponse
+    public function getAllSuppliers() : JsonResponse
     {
-        return $this->json(
-            [ 'suppliers' => Supplier::getAll()
-            ]
-        );
+        $suppliers = Supplier::getAll();
+        return $this->json($suppliers);
     }
 }

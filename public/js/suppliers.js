@@ -1,19 +1,21 @@
 class Suppliers {
     async constructor() {
-        window.onload = () => this.reloadData();
+        //window.onload = () => this.reloadData();
+        document.getElementById("send-message").onclick = () => this.reloadData();
 
-        setInterval(() => {
-            this.reloadData()
-        }, 2000);
+        // setInterval(() => {
+        //     this.reloadData()
+        // }, 2000);
     }
 
     async getSuppliers() {
         try {
-            let response = await fetch("?c=supplier&a=suppliers");
+            let response = await fetch("?c=supplier&a=getAllSuppliers");
             let dataCollection = await response.json();
+
             let text = document.getElementById("suppliers-table");
             text.textContent = '';
-            dataCollection.suppliers.forEach((supplier) => {
+            dataCollection.forEach((supplier) => {
                 let row = document.createElement("tr");
                 row.innerText = supplier.company;
                 row.innerText = supplier.country;

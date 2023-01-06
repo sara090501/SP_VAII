@@ -1,1 +1,1 @@
-<?php
+<div id="suppliers-table"></div>

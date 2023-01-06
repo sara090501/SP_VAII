@@ -12,6 +12,19 @@ class Supplier extends Model
     protected string $slogan;
 
     /**
+     * @param string $company
+     * @param string $country
+     * @param string $slogan
+     */
+    public function __construct(string $company, string $country, string $slogan)
+    {
+        $this->company = $company;
+        $this->country = $country;
+        $this->slogan = $slogan;
+    }
+
+
+    /**
      * @return int
      */
     public function getId(): int

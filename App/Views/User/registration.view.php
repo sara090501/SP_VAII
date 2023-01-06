@@ -29,10 +29,14 @@
                             <input name="email" type="text" class="form-control" placeholder="janko.mrkvicka@example.com" id="email">
                         </div>
                         <div class="form-group">
+                            <label for="login">Prezývka</label>
+                            <p id="login-input" hidden></p>
+                            <input name="login" type="text" class="form-control" placeholder="janci2" id="login">
+                        </div>
+                        <div class="form-group">
                             <label for="password">Heslo</label>
                             <p id="password-input" hidden></p>
-                            <input name="password" type="password" id="password" class="form-control">
-                            <label for="password-checkbox">Email</label>
+                            <input name="password" type="password" class="form-control" placeholder="JankoJeSuper123" id="password"">
                             <input id="password-checkbox" type="checkbox" onclick="visibilityOfPassword()">
                             <img class="icon-size" src="public/img/passwordOpenEyeIcon.png" alt="Password Open Eye Icon">
                         </div>

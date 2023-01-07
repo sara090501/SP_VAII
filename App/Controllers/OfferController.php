@@ -34,6 +34,16 @@ class OfferController extends AControllerBase
         return $this->json(['offers' => Offer::getAll()]);
     }
 
+    public function offerNames() : JsonResponse
+    {
+        $names = array();
+        $offers = Offer::getAll();
+        foreach($offers as $offer) {
+            array_push($names, $offer->getName());
+        }
+        return $this->json($names);
+    }
+
     public function add(): Response
     {
         $data = $this->request()->getPost();

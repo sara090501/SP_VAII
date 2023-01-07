@@ -39,7 +39,7 @@ class OfferController extends AControllerBase
         $names = array();
         $offers = Offer::getAll();
         foreach($offers as $offer) {
-            array_push($names, $offer->getName());
+            $names[] = $offer->getName();
         }
         return $this->json($names);
     }

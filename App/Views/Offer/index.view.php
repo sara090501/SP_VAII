@@ -2,11 +2,11 @@
 /** @var \App\Core\IAuthenticator $auth */
 ?>
 
-<script src="public/js/registration.js"></script>
+<script src="public/js/offer.js"></script>
 
 <div class="center">
     <form method="get" action="">
-        <input type="text" id="search-offers" placeholder="Search" onkeyup="showSuggestions(this.value)">
+        <input type="text" id="search-offers" placeholder="Search" onkeyup="showOffers(this.value)">
         <p>Suggestions: <span id="output"></span></p>
     </form>
 </div>

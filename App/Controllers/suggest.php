@@ -1,4 +1,6 @@
 <?php
+use App\Controllers\OfferController;
+
 $people[] = "Anna";
 $people[] = "Ann";
 $people[] = "Annita";
@@ -9,19 +11,22 @@ $people[] = "Steve";
 $people[] = "Steven";
 $people[] = "Stevenson";
 
+//$offerController = new OfferController();
+//$offers = $offerController->offerNames();
+
 $q = $_REQUEST['q'];
 $suggestion = "";
 
 if ($q !== "") {
     $q = strtolower($q);
     $len = strlen($q);
-    foreach($people as $person) {
-        if (stristr($q, substr($person, 0, $len))) {
+    foreach($people as $offer) {
+        if (stristr($q, substr($offer, 0, $len))) {
             if ($suggestion === "") {
-                $suggestion = $person;
+                $suggestion = $offer;
             } else {
                 //already found someone, .= means appending
-                $suggestion .= ", $person";
+                $suggestion .= ", $offer";
             }
         }
     }

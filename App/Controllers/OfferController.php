@@ -34,14 +34,14 @@ class OfferController extends AControllerBase
         return $this->json(['offers' => Offer::getAll()]);
     }
 
-    public function offerNames() : JsonResponse
+    public static function offerNames() : JsonResponse
     {
         $names = array();
         $offers = Offer::getAll();
         foreach($offers as $offer) {
             $names[] = $offer->getName();
         }
-        return $this->json($names);
+        return new JsonResponse($names);
     }
 
     public function add(): Response

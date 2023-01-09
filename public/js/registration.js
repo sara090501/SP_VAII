@@ -10,7 +10,7 @@ function showSuggestions(str) {
                 document.getElementById('output').innerHTML = this.responseText;
             }
         }
-        xmlHttp.open("GET", "App/Views/User/suggest.php?q="+str, true);
+        xmlHttp.open("GET", "App/Controllers/suggest.php?q="+str, true);
         xmlHttp.send();
     }
 }

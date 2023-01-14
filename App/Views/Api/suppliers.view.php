@@ -16,7 +16,7 @@ $layout = 'no';
         <?php foreach ($data as $row) { ?>
             <tr>
                 <?php foreach ($row as $element) { ?>
-                        <th scope="row"><?=$element?></th>
+                        <td><?=$element?></td>
                 <?php } ?>
             </tr>
         <?php } ?>

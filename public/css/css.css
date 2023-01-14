@@ -122,3 +122,8 @@ img {
 .red-text {
     color: maroon;
 }
+
+.top-padding {
+    padding-top: 160px;
+    padding-left: 160px;
+}

@@ -6,6 +6,7 @@ use App\Core\AControllerBase;
 use App\Core\Responses\Response;
 use App\Core\Responses\ViewResponse;
 use App\Models\Offer;
+use App\Models\Supplier;
 
 class ApiController extends AControllerBase
 {
@@ -40,6 +41,18 @@ class ApiController extends AControllerBase
         }
 
         return $this->html($suggestion);
+    }
+
+    public function suppliers() : ViewResponse
+    {
+        $suppliers = Supplier::getAll();
+        $data = array();
+        foreach($suppliers as $offer) {
+            $data[] = $offer->getCompany();
+            $data[] = $offer->getCountry();
+            $data[] = $offer->getSlogan();
+        }
+        return $this->html($data);
     }
 
     public function index(): Response

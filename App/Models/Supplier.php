@@ -16,7 +16,7 @@ class Supplier extends Model
      * @param string $country
      * @param string $slogan
      */
-    public function __construct(string $company, string $country, string $slogan)
+    public function __construct(string $company = '', string $country = '', string $slogan = '')
     {
         $this->company = $company;
         $this->country = $country;

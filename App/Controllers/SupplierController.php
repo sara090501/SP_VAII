@@ -3,7 +3,6 @@
 namespace App\Controllers;
 
 use App\Core\AControllerBase;
-use App\Core\Responses\JsonResponse;
 use App\Core\Responses\Response;
 use App\Core\Responses\ViewResponse;
 use App\Models\Supplier;
@@ -15,7 +14,6 @@ class SupplierController extends AControllerBase
         return true;
     }
 
-
     /**
      * Vráti index html
      * @return Response
@@ -25,9 +23,13 @@ class SupplierController extends AControllerBase
         return $this->html();
     }
 
-    public function getAllSuppliers() : JsonResponse
+    public function suppliers() : ViewResponse
     {
         $suppliers = Supplier::getAll();
-        return $this->json($suppliers);
+        $names = array();
+        foreach($suppliers as $offer) {
+            $names[] = $offer->getCompany();
+        }
+        return $this->html($names);
     }
 }

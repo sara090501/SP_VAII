@@ -1,23 +1,25 @@
-<?php /** @var Array $data */
+<?php /** @var String[][] $data */
 $layout = 'no';
-$counter = 0;
 ?>
 
 <div id="suppliers-table">
-    <table>
+    <table class="table table-striped">
+        <thead>
         <tr>
-            <th>Firma</th>
-            <th>Company</th>
-            <th>Slogan</th>
+            <th scope="col">Firma</th>
+            <th scope="col">Krajina</th>
+            <th scope="col">Slogan</th>
         </tr>
+        </thead>
+        <tbody>
+        <tr>
         <?php foreach ($data as $row) { ?>
-            <?php if ($counter == 3) { ?>
-                <tr><?=$row?></tr>
-                <?php $counter++ ?>
-            <?php } else { ?>
-                <th><?=$row?></th>
-                <?php $counter = 0 ?>
-            <?php } ?>
+            <tr>
+                <?php foreach ($row as $element) { ?>
+                        <th scope="row"><?=$element?></th>
+                <?php } ?>
+            </tr>
         <?php } ?>
+        </tbody>
     </table>
 </div>

@@ -47,11 +47,15 @@ class ApiController extends AControllerBase
     {
         $suppliers = Supplier::getAll();
         $data = array();
-        foreach($suppliers as $offer) {
-            $data[] = $offer->getCompany();
-            $data[] = $offer->getCountry();
-            $data[] = $offer->getSlogan();
+
+        $i = 0;
+        foreach ($suppliers as $offer) {
+            $data[$i][] = $offer->getCompany();
+            $data[$i][] = $offer->getCountry();
+            $data[$i][] = $offer->getSlogan();
+            $i++;
         }
+
         return $this->html($data);
     }
 

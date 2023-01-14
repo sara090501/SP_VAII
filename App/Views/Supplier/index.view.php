@@ -1,4 +1,16 @@
 <script src="public/js/suppliers.js"></script>
 
-<a class="btn btn-sm btn-outline-secondary center-photo button" onclick="getAllSuppliers()">Zobraziť dodávateľov</a>
-<p>Suggestions: <span id="output"></span></p>
+<div class="row padding">
+    <div class="col-4">
+        <img src="public/img/coffeeTruck.png" alt="Coffee Home" class="center-photo">
+    </div>
+    <div class="col-3">
+        <a class="btn btn-sm btn-outline-secondary button" onclick="getAllSuppliers()">Zobraziť dodávateľov</a>
+    </div>
+    <div class="col-4">
+        <img src="public/img/coffeeCup.png" alt="Coffee Home" class="center-photo">
+    </div>
+</div>
+<div>
+    <p><span id="output"></span></p>
+</div>

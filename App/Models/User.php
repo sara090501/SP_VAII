@@ -10,7 +10,21 @@ class User extends Model
     protected string $firstName;
     protected string $lastName;
     protected string $email;
+    protected string $login;
+    protected string $password;
     protected string $phoneNumber;
+
+    /**
+     * User constructor
+     * @param $login
+     * @param $password
+     */
+    public function __construct(string $login = '', string $password = '')
+    {
+        $this->login = $login;
+        $this->password = $password;
+    }
+
 
     /**
      * @return int
@@ -79,6 +93,38 @@ class User extends Model
     /**
      * @return string
      */
+    public function getLogin(): string
+    {
+        return $this->login;
+    }
+
+    /**
+     * @param string $login
+     */
+    public function setLogin(string $login): void
+    {
+        $this->login = $login;
+    }
+
+    /**
+     * @return string
+     */
+    public function getPassword(): string
+    {
+        return $this->password;
+    }
+
+    /**
+     * @param string $password
+     */
+    public function setPassword(string $password): void
+    {
+        $this->password = $password;
+    }
+
+    /**
+     * @return string
+     */
     public function getPhoneNumber(): string
     {
         return $this->phoneNumber;
@@ -90,5 +136,12 @@ class User extends Model
     public function setPhoneNumber(string $phoneNumber): void
     {
         $this->phoneNumber = $phoneNumber;
+    }
+
+    public function jsonSerialize() : array
+    {
+        $object = parent::jsonSerialize();
+        unset($object['password']);
+        return $object;
     }
 }

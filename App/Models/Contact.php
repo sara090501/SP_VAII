@@ -2,7 +2,9 @@
 
 namespace App\Models;
 
-class Contact
+use App\Core\Model;
+
+class Contact extends Model
 {
     protected int $id;
     protected string $name;

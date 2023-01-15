@@ -38,6 +38,11 @@ class UserController extends AControllerBase
             $user->setFirstName($data["firstName"]);
             $user->setLastName($data["lastName"]);
             $user->setEmail($data["email"]);
+            $user->setLogin($data["login"]);
+
+            $password = password_hash($data["password"], PASSWORD_BCRYPT);
+            $user->setPassword($password);
+
             $user->setPhoneNumber($data["phoneNumber"]);
 
             $firstName = $_POST['firstName'];
@@ -45,9 +50,9 @@ class UserController extends AControllerBase
             $email = $_POST['email'];
             $phoneNumber = $_POST['phoneNumber'];
 
-            if (!preg_match("/[A-Z][a-z]/", $firstName)) {
+            if (!preg_match("/[A-Z ÁÉÍÓÚŽČŠ][a-z áéíóúžčš]/", $firstName)) {
                 echo "<br><div class='center red-text'>Zadali ste nesprávny formát mena</div>";
-            } else if (!preg_match("/[A-Z][a-z]/", $lastName)) {
+            } else if (!preg_match("/[A-Z ÁÉÍÓÚŽČŠ][a-z áéíóúžčš]/", $lastName)) {
                 echo "<br><div class='center red-text'>Zadali ste nesprávny formát priezviska</div>";
             } else if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
                 echo "<br><div class='center red-text'>Zadali ste zlý email</div>";

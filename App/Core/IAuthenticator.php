@@ -24,10 +24,22 @@ interface IAuthenticator
     function logout(): void;
 
     /**
-     * Return name of a logged user
+     * Return first name of a logged user
      * @return string
      */
-    function getLoggedUserName(): string;
+    function getLoggedFirstName(): string;
+
+    /**
+     * Return last name of a logged user
+     * @return string
+     */
+    function getLoggedLastName(): string;
+
+    /**
+     * Return login of a logged user
+     * @return string
+     */
+    function getLoggedLogin(): string;
 
     /**
      * Return id of a logged user

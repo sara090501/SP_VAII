@@ -55,7 +55,7 @@ class DummyAuthenticator implements IAuthenticator
      * Get the name of the logged-in user
      * @return string
      */
-    function getLoggedUserName(): string
+    function getLoggedLogin(): string
     {
 
         return isset($_SESSION['user']) ? $_SESSION['user'] : throw new \Exception("User not logged in");
@@ -84,6 +84,16 @@ class DummyAuthenticator implements IAuthenticator
      * @return mixed
      */
     function getLoggedUserId(): mixed
+    {
+        return $_SESSION['user'];
+    }
+
+    function getLoggedFirstName(): string
+    {
+        return $_SESSION['user'];
+    }
+
+    function getLoggedLastName(): string
     {
         return $_SESSION['user'];
     }

@@ -2,7 +2,7 @@
 /** @var \App\Core\IAuthenticator $auth */
 ?>
 <a class="btn btn-sm btn-outline-secondary center-photo button" href="?c=review&a=add">Pridať recenziu</a>
-<div class="row mb-2 post-padding">
+<div class="row mb-2 post-padding body-size">
 
 <?php foreach ($data as $row) { ?>
     <div class="col-md-6">
@@ -12,7 +12,7 @@
                 <p class="card-text mb-auto"><?=$row->getText()?></p>
                 <?php if ($auth->isLogged()) { ?>
                     <?php if ($auth->getLoggedLogin() == 'admin') { ?>
-                        <a class="btn btn-sm btn-outline-secondary button" href="?c=review&a=delete&id=<?=$row->getId()?>">Odstrániť</a>
+                        <a class="btn btn-sm btn-outline-secondary button" onclick="return confirmReviewDel(<?=$row->getId()?>)" href="?c=review&a=delete&id=<?=$row->getId()?>">Odstrániť</a>
                     <?php } ?>
                 <?php } ?>
             </div>

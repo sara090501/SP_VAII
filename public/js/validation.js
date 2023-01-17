@@ -139,3 +139,24 @@ function validationOfRegistration() {
 
     return true;
 }
+
+function confirmOfferDel(id) {
+    if (confirm("Ste si istý, že chcte odstrániť túto ponuku?")) {
+        window.location.href = "?c=offer&a=delete&id="+ id;
+    }
+    return false;
+}
+
+function confirmContactDel(id) {
+    if (confirm("Ste si istý, že chcte odstrániť túto správu?")) {
+        window.location.href = "?c=contact&a=delete&id="+ id;
+    }
+    return false;
+}
+
+function confirmReviewDel(id) {
+    if (confirm("Ste si istý, že chcte odstrániť túto recenziu?")) {
+        window.location.href = "?c=review&a=delete&id="+ id;
+    }
+    return false;
+}

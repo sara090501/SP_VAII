@@ -127,3 +127,7 @@ img {
     padding-top: 160px;
     padding-left: 160px;
 }
+
+.body-size {
+    min-height: 55vh;
+}

@@ -3,7 +3,7 @@
 
 <script src="public/js/suppliers.js"></script>
 
-<div class="row padding">
+<div class="row padding body-size">
     <div class="col-4">
         <img src="public/img/coffeeTruck.png" alt="Coffee Home" class="center-photo">
     </div>

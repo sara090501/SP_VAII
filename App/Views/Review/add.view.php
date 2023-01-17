@@ -2,7 +2,7 @@
 
 <script src="public/js/validation.js"></script>
 
-<div class="container">
+<div class="container body-size">
     <form action="?c=review&a=add" method="post" name="addReview" onsubmit="return validationOfReview()">
         <div class="form-group">
             <label for="name">Vaše meno</label>

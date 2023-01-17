@@ -18,8 +18,8 @@
     <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
     <script type="text/javascript" src='https://rawgit.com/seiyria/bootstrap-slider/master/dist/bootstrap-slider.js'></script>
 
-    <script scr="public/js/suppliers.js"></script>
-    <script scr="public/js/validation.js"></script>
+    <script src="public/js/suppliers.js"></script>
+    <script src="public/js/validation.js"></script>
 
     <link rel="stylesheet" href="public/css/css.css">
 </head>

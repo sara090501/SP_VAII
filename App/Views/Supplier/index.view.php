@@ -1,3 +1,6 @@
+<?php /** @var \App\Core\IAuthenticator $auth */
+?>
+
 <script src="public/js/suppliers.js"></script>
 
 <div class="row padding">
@@ -17,3 +20,10 @@
 <div>
     <p><span id="output"></span></p>
 </div>
+<?php if ($auth->isLogged()) { ?>
+    <?php if ($auth->getLoggedLogin() == 'admin') { ?>
+        <br>
+        <a class="link-secondary" href="?c=supplier&a=add"><img class="logo bigger-icon center-photo" src="public/img/plusIcon.png" alt="Logo"></a>
+        <br>
+    <?php } ?>
+<?php } ?>

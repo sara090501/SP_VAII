@@ -34,6 +34,28 @@ function validationOfOffer() {
     return true;
 }
 
+function validationOfSupplier() {
+    let companyValidation = document.forms["supplierAdd"]["company"].value;
+    if (nameValidation === "") {
+        let warning = document.getElementById("company-input");
+        warning.hidden = false;
+        warning.style = "color:red";
+        warning.innerText = "Meno firmy musí byť vyplnené.";
+    }
+
+    let countryValidation = document.forms["supplierAdd"]["country"].value;
+    if (countryValidation === "") {
+        let warning = document.getElementById("company-input");
+        warning.hidden = false;
+        warning.style = "color:red";
+        warning.innerText = "Krajina firmy musí byť vyplnené.";
+
+        return false;
+    }
+
+    return true;
+}
+
 function validationOfReviewEdit() {
     let nameValidation = document.forms["contactEdit"]["name"].value;
     if (nameValidation === "") {

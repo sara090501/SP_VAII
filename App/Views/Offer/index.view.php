@@ -6,8 +6,8 @@
 
 <div class="center">
     <form method="get" action="">
-        <input type="text" id="search-offers" placeholder="Search" onkeyup="showOffers(this.value)">
-        <p>Suggestions: <span id="output"></span></p>
+        <input type="text" id="search-offers" placeholder="Hľadať" onkeyup="showOffers(this.value)">
+        <p>Nájdené: <span id="output"></span></p>
     </form>
 </div>
 <br>

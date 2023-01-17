@@ -66,7 +66,7 @@ class OfferController extends AControllerBase
             if (!(is_float($price)) && empty($price)) {
                 $addable = false;
                 $error['priceError'] = $required;
-            } else if (!preg_match("/^([1-9][0-9]*|0)(\.[0-9]{2})?$/", $price)) {
+            } else if (!preg_match("/^([1-9][0-9]*|0)(\.[0-9]{1,2})?$/", $price)) {
                 $addable = false;
                 $error['priceError'] = 'Zadali ste nesprávny formát ceny!';
             }
@@ -105,7 +105,7 @@ class OfferController extends AControllerBase
 
                 if (!preg_match("/[A-Z][a-z]/", $name)) {
                     echo "<br><div class='center red-text'>Zadali ste nesprávny formát mena</div>";
-                } else if (!preg_match("/^([1-9][0-9]*|0)(\.[0-9]{2})?$/", $price)) {
+                } else if (!preg_match("/^([1-9][0-9]*|0)(\.[0-9]{1,2})?$/", $price)) {
                     echo "<br><div class='center red-text'>Zadali ste nesprávny formát ceny</div>";
                 } else {
                     $offer->save();

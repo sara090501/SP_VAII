@@ -1,5 +1,10 @@
 <?php /* @var \App\Models\Offer $data */ ?>
 
+<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+<script type="text/javascript" src='https://rawgit.com/seiyria/bootstrap-slider/master/dist/bootstrap-slider.js'></script>
+<link rel="stylesheet" type="text/css" href="https://rawgit.com/seiyria/bootstrap-slider/master/dist/css/bootstrap-slider.css">
+<link rel="stylesheet" type="text/css" href="http://seiyria.com/bootstrap-slider/css/bootstrap.min.css">
+
 <form action="?c=offer&a=edit" method="post">
     <?php if ($data->getId()) { ?>
         <input type="hidden" name="id" value="<?=$data->getId() ?>">
@@ -19,7 +24,18 @@
     </div>
     <div class="form-group">
         <label for="exampleFormControlTextarea1">Cena produktu</label>
-        <textarea name="price" class="form-control" id="exampleFormControlTextarea1" rows="3"><?=$data->getPrice()?></textarea>
+        <p><input name="price" type="text" onchange="RGBChange()" class="span2" value="" data-slider-min="0" data-slider-max="12" data-slider-step="0.05" data-slider-value="5" data-slider-id="GC" id="G"/></p>
+        <input id="val" type="text">
+
+        <script>
+            var RGBChange = function() {
+                $("#val").val(g.getValue());
+            };
+
+            var g = $('#G').slider()
+                .on('slide', RGBChange)
+                .data('slider');
+        </script>
     </div>
     <button type="submit" class="btn btn-sm btn-outline-secondary submit button">Potvrdiť</button>
 </form>

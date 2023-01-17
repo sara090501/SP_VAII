@@ -29,7 +29,6 @@ class ApiController extends AControllerBase
                     if ($suggestion === "") {
                         $suggestion = $offer;
                     } else {
-                        //already found someone, .= means appending
                         $suggestion .= ", $offer";
                     }
                 }
@@ -37,7 +36,7 @@ class ApiController extends AControllerBase
         }
 
         if ($suggestion === "") {
-            $suggestion = "No Suggestion";
+            $suggestion = "takúto kávu v ponuke žiaľ nemáme... :(";
         }
 
         return $this->html($suggestion);

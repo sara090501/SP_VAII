@@ -5,10 +5,13 @@
 <link rel="stylesheet" type="text/css" href="https://rawgit.com/seiyria/bootstrap-slider/master/dist/css/bootstrap-slider.css">
 <link rel="stylesheet" type="text/css" href="http://seiyria.com/bootstrap-slider/css/bootstrap.min.css">
 
-<form action="?c=offer&a=add" method="post">
+<script src="public/js/validation.js"></script>
+
+<form action="?c=offer&a=add" method="post" name="offer" onsubmit="return validationOfOffer()">
     <div class="form-group">
         <label for="name">Názov</label>
-        <input name="name" type="text" class="form-control" id="name" >
+        <p id="name-input" hidden></p>
+        <input name="name" type="text" class="form-control" id="name">
     </div>
     <div class="text-center text-danger mb-3">
         <?= @$data['nameError'] ?>
@@ -22,7 +25,7 @@
         <textarea name="imgpath" class="form-control" id="imgpath" rows="3"></textarea>
     </div>
     <div class="form-group">
-        <label for="exampleFormControlTextarea1">Cena produktu</label>
+        <label for="price">Cena produktu</label>
         <p><input name="price" type="text" onchange="RGBChange()" class="span2" value="" data-slider-min="0" data-slider-max="12" data-slider-step="0.05" data-slider-value="5" data-slider-id="GC" id="G"/></p>
         <input id="val" type="text" class="form-control">
 

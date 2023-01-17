@@ -17,7 +17,73 @@ function validationOfReview() {
         return false;
     }
 
-    return false;
+    return true;
+}
+
+function validationOfOffer() {
+    let nameValidation = document.forms["offer"]["name"].value;
+    if (nameValidation === "") {
+        let warning = document.getElementById("name-input");
+        warning.hidden = false;
+        warning.style = "color:red";
+        warning.innerText = "Meno musí byť vyplnené.";
+
+        return false;
+    }
+
+    return true;
+}
+
+function validationOfSupplier() {
+    let companyValidation = document.forms["supplierAdd"]["company"].value;
+    if (nameValidation === "") {
+        let warning = document.getElementById("company-input");
+        warning.hidden = false;
+        warning.style = "color:red";
+        warning.innerText = "Meno firmy musí byť vyplnené.";
+    }
+
+    let countryValidation = document.forms["supplierAdd"]["country"].value;
+    if (countryValidation === "") {
+        let warning = document.getElementById("company-input");
+        warning.hidden = false;
+        warning.style = "color:red";
+        warning.innerText = "Krajina firmy musí byť vyplnené.";
+
+        return false;
+    }
+
+    return true;
+}
+
+function validationOfReviewEdit() {
+    let nameValidation = document.forms["contactEdit"]["name"].value;
+    if (nameValidation === "") {
+        let warning = document.getElementById("name-input");
+        warning.hidden = false;
+        warning.style = "color:red";
+        warning.innerText = "Meno musí byť vyplnené.";
+    }
+
+    let emailValidation = document.forms["contactEdit"]["email"].value;
+    if (emailValidation === "") {
+        let warning = document.getElementById("email-input");
+        warning.hidden = false;
+        warning.style = "color:red";
+        warning.innerText = "Email musí byť vyplnené.";
+    }
+
+    let messageValidation = document.forms["contactEdit"]["message"].value;
+    if (messageValidation === "") {
+        let warning = document.getElementById("message-input");
+        warning.hidden = false;
+        warning.style = "color:red";
+        warning.innerText = "Správa musí byť vyplnené.";
+
+        return false;
+    }
+
+    return true;
 }
 
 function validationOfRegistration() {
@@ -71,5 +137,26 @@ function validationOfRegistration() {
         return false;
     }
 
+    return true;
+}
+
+function confirmOfferDel(id) {
+    if (confirm("Ste si istý, že chcte odstrániť túto ponuku?")) {
+        window.location.href = "?c=offer&a=delete&id="+ id;
+    }
+    return false;
+}
+
+function confirmContactDel(id) {
+    if (confirm("Ste si istý, že chcte odstrániť túto správu?")) {
+        window.location.href = "?c=contact&a=delete&id="+ id;
+    }
+    return false;
+}
+
+function confirmReviewDel(id) {
+    if (confirm("Ste si istý, že chcte odstrániť túto recenziu?")) {
+        window.location.href = "?c=review&a=delete&id="+ id;
+    }
     return false;
 }

@@ -72,5 +72,4 @@ class Order
     {
         $this->amount = $amount;
     }
-
 }

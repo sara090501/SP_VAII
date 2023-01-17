@@ -123,5 +123,4 @@ class UserController extends AControllerBase
     {
         return $this->html();
     }
-
 }

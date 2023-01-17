@@ -11,7 +11,7 @@
     </form>
 </div>
 <br>
-<div class="row mb-2" id="offer-list">
+<div class="row mb-2 body-size" id="offer-list">
     <?php foreach ($data as $row) { ?>
         <div class="col-md-6">
             <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
@@ -22,7 +22,7 @@
                     <?php if ($auth->isLogged()) { ?>
                         <?php if ($auth->getLoggedLogin() == 'admin') { ?>
                             <a class="link-secondary" href="?c=offer&a=edit&id=<?=$row->getId()?>"><img class="logo small-icon" src="public/img/editIcon.png" alt="Logo"></a>
-                            <a class="link-secondary" href="?c=offer&a=delete&id=<?=$row->getId()?>"><img class="logo small-icon" src="public/img/deleteIcon.jpg" alt="Logo"></a>
+                            <a class="link-secondary" onclick="return confirmOfferDel(<?=$row->getId()?>)" href="?c=offer&a=delete&id=<?=$row->getId()?>"><img class="logo small-icon" src="public/img/deleteIcon.jpg" alt="Logo"></a>
                         <?php } ?>
                     <?php } ?>
                     </p>

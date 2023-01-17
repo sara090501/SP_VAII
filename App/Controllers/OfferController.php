@@ -41,6 +41,7 @@ class OfferController extends AControllerBase
         foreach($offers as $offer) {
             $names[] = $offer->getName();
         }
+
         return new JsonResponse($names);
     }
 

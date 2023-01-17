@@ -36,7 +36,8 @@ class ContactController extends AControllerBase
 
 
             if (!preg_match("/[A-Z][a-z]/", $name)) {
-                echo "<br><div class='center red-text'>Zadali ste nesprávny formát mena</div>";
+                $data['error'] = 'Zadali ste nesprávny formát mena!';
+                return $this->html($data);
             } else {
                 $contact->save();
                 return $this->redirect("?c=contact");

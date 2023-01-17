@@ -7,6 +7,9 @@
                 <div class="card">
                     <div class="card-header text-white contact-labels"><i class="fa fa-envelope"></i>KONTAKTUJTE NÁS</div>
                     <div class="card-body">
+                        <div class="text-center text-danger mb-3">
+                            <?= @$data['error'] ?>
+                        </div>
                         <form>
                             <div class="form-group">
                                 <label for="name">Meno</label>

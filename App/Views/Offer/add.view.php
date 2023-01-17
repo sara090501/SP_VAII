@@ -5,7 +5,9 @@
         <label for="exampleFormControlInput1">Názov</label>
         <input name="name" type="text" class="form-control" id="exampleFormControlInput1" >
     </div>
-
+    <div class="text-center text-danger mb-3">
+        <?= @$data['nameError'] ?>
+    </div>
     <div class="form-group">
         <label for="exampleFormControlTextarea1">Popis</label>
         <textarea name="description" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
@@ -17,6 +19,9 @@
     <div class="form-group">
         <label for="exampleFormControlTextarea1">Cena produktu</label>
         <textarea name="price" class="form-control" id="exampleFormControlTextarea3" rows="3"></textarea>
+    </div>
+    <div class="text-center text-danger mb-3">
+        <?= @$data['priceError'] ?>
     </div>
     <button type="submit" class="btn btn-sm btn-outline-secondary submit button">Pridať</button>
 </form>

@@ -25,7 +25,7 @@
     <div class="form-group">
         <label for="exampleFormControlTextarea1">Cena produktu</label>
         <p><input name="price" type="text" onchange="RGBChange()" class="span2" value="" data-slider-min="0" data-slider-max="12" data-slider-step="0.05" data-slider-value="5" data-slider-id="GC" id="G"/></p>
-        <input id="val" type="text">
+        <input id="val" value="<?=$data->getPrice()?>" type="text">
 
         <script>
             var RGBChange = function() {

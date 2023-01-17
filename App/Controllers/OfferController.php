@@ -103,9 +103,9 @@ class OfferController extends AControllerBase
                 $price = $_POST['price'];
 
 
-                if (!preg_match("/[A-Z][a-z]/", $name)) {
+                if (empty($name) || !preg_match("/[A-Z][a-z]/", $name)) {
                     echo "<br><div class='center red-text'>Zadali ste nesprávny formát mena</div>";
-                } else if (!preg_match("/^([1-9][0-9]*|0)(\.[0-9]{1,2})?$/", $price)) {
+                } else if (empty($price) || !preg_match("/^([1-9][0-9]*|0)(\.[0-9]{1,2})?$/", $price)) {
                     echo "<br><div class='center red-text'>Zadali ste nesprávny formát ceny</div>";
                 } else {
                     $offer->save();

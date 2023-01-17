@@ -14,7 +14,6 @@ class ReviewController extends AControllerBase
         return true;
     }
 
-
     public function index(): Response
     {
         $review = Review::getAll();
@@ -66,5 +65,4 @@ class ReviewController extends AControllerBase
 
         return $this->redirect("?c=review");
     }
-
 }

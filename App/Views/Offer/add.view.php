@@ -5,9 +5,12 @@
 <link rel="stylesheet" type="text/css" href="https://rawgit.com/seiyria/bootstrap-slider/master/dist/css/bootstrap-slider.css">
 <link rel="stylesheet" type="text/css" href="http://seiyria.com/bootstrap-slider/css/bootstrap.min.css">
 
-<form action="?c=offer&a=add" method="post">
+<script src="public/js/validation.js"></script>
+
+<form action="?c=offer&a=add" method="post" name="offer" onsubmit="return validationOfOffer()">
     <div class="form-group">
         <label for="name">Názov</label>
+        <p id="name-input" hidden></p>
         <input name="name" type="text" class="form-control" id="name" >
     </div>
     <div class="text-center text-danger mb-3">

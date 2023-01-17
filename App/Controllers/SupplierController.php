@@ -30,6 +30,7 @@ class SupplierController extends AControllerBase
         foreach($suppliers as $offer) {
             $names[] = $offer->getCompany();
         }
+
         return $this->html($names);
     }
 }

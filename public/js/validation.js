@@ -17,7 +17,51 @@ function validationOfReview() {
         return false;
     }
 
-    return false;
+    return true;
+}
+
+function validationOfOffer() {
+    let nameValidation = document.forms["offer"]["name"].value;
+    if (nameValidation === "") {
+        let warning = document.getElementById("name-input");
+        warning.hidden = false;
+        warning.style = "color:red";
+        warning.innerText = "Meno musí byť vyplnené.";
+
+        return false;
+    }
+
+    return true;
+}
+
+function validationOfReviewEdit() {
+    let nameValidation = document.forms["contactEdit"]["name"].value;
+    if (nameValidation === "") {
+        let warning = document.getElementById("name-input");
+        warning.hidden = false;
+        warning.style = "color:red";
+        warning.innerText = "Meno musí byť vyplnené.";
+    }
+
+    let emailValidation = document.forms["contactEdit"]["email"].value;
+    if (emailValidation === "") {
+        let warning = document.getElementById("email-input");
+        warning.hidden = false;
+        warning.style = "color:red";
+        warning.innerText = "Email musí byť vyplnené.";
+    }
+
+    let messageValidation = document.forms["contactEdit"]["message"].value;
+    if (messageValidation === "") {
+        let warning = document.getElementById("message-input");
+        warning.hidden = false;
+        warning.style = "color:red";
+        warning.innerText = "Správa musí byť vyplnené.";
+
+        return false;
+    }
+
+    return true;
 }
 
 function validationOfRegistration() {
@@ -71,5 +115,5 @@ function validationOfRegistration() {
         return false;
     }
 
-    return false;
+    return true;
 }

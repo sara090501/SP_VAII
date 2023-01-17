@@ -87,6 +87,4 @@ class Supplier extends Model
     {
         $this->slogan = $slogan;
     }
-
-
 }

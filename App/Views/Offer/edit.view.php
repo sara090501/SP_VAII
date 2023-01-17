@@ -5,12 +5,15 @@
 <link rel="stylesheet" type="text/css" href="https://rawgit.com/seiyria/bootstrap-slider/master/dist/css/bootstrap-slider.css">
 <link rel="stylesheet" type="text/css" href="http://seiyria.com/bootstrap-slider/css/bootstrap.min.css">
 
-<form action="?c=offer&a=edit" method="post">
+<script src="public/js/validation.js"></script>
+
+<form action="?c=offer&a=edit" method="post" name="offer" onsubmit="return validationOfOffer()">
     <?php if ($data->getId()) { ?>
         <input type="hidden" name="id" value="<?=$data->getId() ?>">
     <?php } ?>
     <div class="form-group">
         <label for="exampleFormControlInput1">Meno</label>
+        <p id="name-input" hidden></p>
         <input value="<?=$data->getName()?>" name="name" type="text" class="form-control" id="exampleFormControlInput1" >
     </div>
     <div class="form-group">

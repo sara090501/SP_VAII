@@ -25,7 +25,6 @@ class User extends Model
         $this->password = $password;
     }
 
-
     /**
      * @return int
      */

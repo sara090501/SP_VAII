@@ -91,5 +91,4 @@ class Offer extends Model
     {
         $this->price = $price;
     }
-
 }

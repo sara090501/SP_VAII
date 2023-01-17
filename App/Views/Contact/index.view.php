@@ -5,7 +5,7 @@
 <br>
 <a class="btn btn-sm btn-outline-secondary center-photo button" href="?c=contact&a=add">Kontaktujte nás</a>
 <br>
-<div class="container padding prevent-select body-size">
+<div class="container padding prevent-select">
     <div class="row">
         <div class="col-12">
             <div class="card bg-light mb-3">

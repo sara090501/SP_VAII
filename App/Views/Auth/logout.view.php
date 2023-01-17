@@ -1,6 +1,6 @@
 <?php $layout = 'auth' ?>
 
-<div class="container-fluid">
+<div class="container-fluid body-size">
     <div class="row">
         <div class="center change-color-to-brown"><br>
             <h4>Úspešne ste sa odhlásili.</h4><br>

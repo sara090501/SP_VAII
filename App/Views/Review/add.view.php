@@ -1,5 +1,7 @@
 <?php /* @var App\Models\Post $data 8*/ ?>
 
+<script src="public/js/validation.js"></script>
+
 <div class="container">
     <form action="?c=review&a=add" method="post" name="addReview" onsubmit="return validationOfReview()">
         <div class="form-group">

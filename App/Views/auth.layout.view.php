@@ -19,6 +19,7 @@
     <script type="text/javascript" src='https://rawgit.com/seiyria/bootstrap-slider/master/dist/bootstrap-slider.js'></script>
 
     <script scr="public/js/suppliers.js"></script>
+    <script scr="public/js/validation.js"></script>
 
     <link rel="stylesheet" href="public/css/css.css">
 </head>

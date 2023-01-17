@@ -3,6 +3,7 @@
 ?>
 
 <script src="public/js/registration.js"></script>
+<script src="public/js/validation.js"></script>
 
 <div class="container">
     <div class="row">
@@ -36,7 +37,7 @@
                             <?= @$data['emailError'] ?>
                         </div>
                         <div class="form-group">
-                            <label for="login">Prezývka</label>
+                            <label for="login-input">Prezývka</label>
                             <p id="login-input" hidden></p>
                             <input name="login" type="text" class="form-control" placeholder="janci2" id="login">
                         </div>
@@ -44,7 +45,7 @@
                             <?= @$data['loginError'] ?>
                         </div>
                         <div class="form-group">
-                            <label for="password">Heslo</label>
+                            <label for="password-input">Heslo</label>
                             <p id="password-input" hidden></p>
                             <input name="password" type="password" class="form-control" placeholder="JankoJeSuper123" id="password"">
                             <input id="password-checkbox" type="checkbox" onclick="visibilityOfPassword()">

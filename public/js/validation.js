@@ -5,8 +5,6 @@ function validationOfReview() {
         warning.hidden = false;
         warning.style = "color:red";
         warning.innerText = "Meno musí byť vyplnené.";
-
-        return false;
     }
 
     let textValidation = document.forms["addReview"]["text"].value;
@@ -18,6 +16,8 @@ function validationOfReview() {
 
         return false;
     }
+
+    return false;
 }
 
 function validationOfRegistration() {
@@ -27,8 +27,6 @@ function validationOfRegistration() {
         warning.hidden = false;
         warning.style = "color:red";
         warning.innerText = "Meno musí byť vyplnené.";
-
-        return false;
     }
 
     let lastNameValidation = document.forms["registration"]["lastName"].value;
@@ -37,8 +35,6 @@ function validationOfRegistration() {
         warning.hidden = false;
         warning.style = "color:red";
         warning.innerText = "Priezvisko musí byť vyplnené.";
-
-        return false;
     }
 
     let emailValidation = document.forms["registration"]["email"].value;
@@ -46,9 +42,23 @@ function validationOfRegistration() {
         let warning = document.getElementById("email-input");
         warning.hidden = false;
         warning.style = "color:red";
-        warning.innerText = "Email musí byť vyplnené.";
+        warning.innerText = "Email musí byť vyplnený.";
+    }
 
-        return false;
+    let loginValidation = document.forms["registration"]["login"].value;
+    if (loginValidation === "") {
+        let warning = document.getElementById("login-input");
+        warning.hidden = false;
+        warning.style = "color:red";
+        warning.innerText = "Prezývka musí byť vyplnená.";
+    }
+
+    let passwordValidation = document.forms["registration"]["password"].value;
+    if (passwordValidation === "") {
+        let warning = document.getElementById("password-input");
+        warning.hidden = false;
+        warning.style = "color:red";
+        warning.innerText = "Heslo musí byť vyplnené.";
     }
 
     let phoneNumberValidation = document.forms["registration"]["phoneNumber"].value;
@@ -60,4 +70,6 @@ function validationOfRegistration() {
 
         return false;
     }
+
+    return false;
 }

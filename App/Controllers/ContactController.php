@@ -20,7 +20,8 @@ class ContactController extends AControllerBase
 
     public function index(): Response
     {
-        return $this->html();
+        $contacts = Contact::getAll();
+        return $this->html($contacts);
     }
 
     public function add(): Response
@@ -36,12 +37,48 @@ class ContactController extends AControllerBase
 
 
             if (!preg_match("/[A-Z][a-z]/", $name)) {
-                echo "<br><div class='center red-text'>Zadali ste nesprávny formát mena</div>";
+                $data['error'] = 'Zadali ste nesprávny formát mena!';
+                return $this->html($data);
             } else {
                 $contact->save();
                 return $this->redirect("?c=contact");
             }
         }
         return $this->html();
+    }
+
+    public function edit() {
+        $id = $this->request()->getValue("id");
+        $contact = Contact::getOne($id);
+        $data = $this->request()->getPost();
+        if($contact != null) {
+            if(isset($data["name"])){ //isset ci existuje a empty ci ej zadane cosi
+                $contact->setName($data["name"]);
+                $contact->setEmail($data["email"]);
+                $contact->setMessage($data["message"]);
+
+                $name = $_POST['name'];
+
+                if (empty($name) || !preg_match("/[A-Z][a-z]/", $name)) {
+                    echo "<br><div class='center red-text'>Zadali ste nesprávny formát mena</div>";
+                } else {
+                    $contact->save();
+                    return $this->redirect("?c=contact");
+                }
+            }
+        }
+
+        return $this->html($contact,"edit");
+    }
+
+    public function delete(): Response
+    {
+        $id = $this->request()->getValue("id");
+        $contact = Contact::getOne($id);
+        if($contact != null){
+            $contact->delete();
+        }
+
+        return $this->redirect("?c=contact");
     }
 }

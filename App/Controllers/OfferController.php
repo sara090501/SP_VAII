@@ -48,23 +48,40 @@ class OfferController extends AControllerBase
     {
         $data = $this->request()->getPost();
         if (isset($data["name"])) {
+
+            $name = $_POST['name'];
+            $price = $_POST['price'];
+
+            $addable = true;
+            $required = "Toto pole musí byť vyplnené!";
+
+            if (empty($name)) {
+                $addable = false;
+                $error['nameError'] = $required;
+            } else if (!preg_match("/[A-Z][a-z]/", $name)) {
+                $addable = false;
+                $error['nameError'] = 'Zadali ste nesprávny formát mena!';
+            }
+
+            if (!(is_float($price)) && empty($price)) {
+                $addable = false;
+                $error['priceError'] = $required;
+            } else if (!preg_match("/^([1-9][0-9]*|0)(\.[0-9]{1,2})?$/", $price)) {
+                $addable = false;
+                $error['priceError'] = 'Zadali ste nesprávny formát ceny!';
+            }
+
             $offer = new Offer();
             $offer->setName($data["name"]);
             $offer->setDescription($data["description"]);
             $offer->setImgpath($data["imgpath"]);
             $offer->setPrice($data["price"]);
 
-            $name = $_POST['name'];
-            $price = $_POST['price'];
-
-
-            if (!preg_match("/[A-Z][a-z]/", $name)) {
-                echo "<br><div class='center red-text'>Zadali ste nesprávny formát mena</div>";
-            } else if (!preg_match("/^([1-9][0-9]*|0)(\.[0-9]{2})?$/", $price)) {
-                echo "<br><div class='center red-text'>Zadali ste nesprávny formát ceny</div>";
-            } else {
+            if ($addable) {
                 $offer->save();
                 return $this->redirect("?c=offer");
+            } else {
+                return $this->html($error);
             }
         }
         return $this->html();
@@ -86,9 +103,9 @@ class OfferController extends AControllerBase
                 $price = $_POST['price'];
 
 
-                if (!preg_match("/[A-Z][a-z]/", $name)) {
+                if (empty($name) || !preg_match("/[A-Z][a-z]/", $name)) {
                     echo "<br><div class='center red-text'>Zadali ste nesprávny formát mena</div>";
-                } else if (!preg_match("/^([1-9][0-9]*|0)(\.[0-9]{2})?$/", $price)) {
+                } else if (empty($price) || !preg_match("/^([1-9][0-9]*|0)(\.[0-9]{1,2})?$/", $price)) {
                     echo "<br><div class='center red-text'>Zadali ste nesprávny formát ceny</div>";
                 } else {
                     $offer->save();

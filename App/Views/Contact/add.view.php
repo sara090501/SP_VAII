@@ -1,23 +1,26 @@
 <?php /* @var App\Models\Contact $data 8*/ ?>
 
-<form action="?c=contact&a=add" method="post">
+<form action="?c=contact&a=add" method="post" name="addContact">
     <div class="container padding prevent-select">
         <div class="row">
             <div class="col">
                 <div class="card">
                     <div class="card-header text-white contact-labels"><i class="fa fa-envelope"></i>KONTAKTUJTE NÁS</div>
                     <div class="card-body">
+                        <div class="text-center text-danger mb-3">
+                            <?= @$data['error'] ?>
+                        </div>
                         <form>
                             <div class="form-group">
-                                <label for="name">Meno</label>
+                                <label for="name-input">Meno</label>
                                 <input name="name" type="text" class="form-control" id="name" placeholder="Vložte meno" required="">
                             </div>
                             <div class="form-group">
-                                <label for="email">E-mailová adresa</label>
+                                <label for="email-input">E-mailová adresa</label>
                                 <input name="email" type="email" class="form-control" id="email" placeholder="Vložte email" required="">
                             </div>
                             <div class="form-group">
-                                <label for="message">Správa</label>
+                                <label for="message-input">Správa</label>
                                 <textarea name="message" type="message" class="form-control" id="message" rows="6" required=""></textarea>
                             </div>
                             <div class="mx-auto">

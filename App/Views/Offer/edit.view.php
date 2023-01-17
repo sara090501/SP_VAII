@@ -13,7 +13,6 @@
         <label for="exampleFormControlInput1">Meno</label>
         <input value="<?=$data->getName()?>" name="name" type="text" class="form-control" id="exampleFormControlInput1" >
     </div>
-
     <div class="form-group">
         <label for="exampleFormControlTextarea1">Popis</label>
         <textarea name="description" class="form-control" id="exampleFormControlTextarea1" rows="3"><?=$data->getDescription()?></textarea>

@@ -16,6 +16,8 @@ function validationOfReview() {
 
         return false;
     }
+
+    return false;
 }
 
 function validationOfRegistration() {
@@ -40,7 +42,7 @@ function validationOfRegistration() {
         let warning = document.getElementById("email-input");
         warning.hidden = false;
         warning.style = "color:red";
-        warning.innerText = "Email musí byť vyplnené.";
+        warning.innerText = "Email musí byť vyplnený.";
     }
 
     let loginValidation = document.forms["registration"]["login"].value;
@@ -48,10 +50,10 @@ function validationOfRegistration() {
         let warning = document.getElementById("login-input");
         warning.hidden = false;
         warning.style = "color:red";
-        warning.innerText = "Prezývka musí byť vyplnené.";
+        warning.innerText = "Prezývka musí byť vyplnená.";
     }
 
-    let passwordValidation = document.forms["registration"]["email"].value;
+    let passwordValidation = document.forms["registration"]["password"].value;
     if (passwordValidation === "") {
         let warning = document.getElementById("password-input");
         warning.hidden = false;
@@ -68,4 +70,6 @@ function validationOfRegistration() {
 
         return false;
     }
+
+    return false;
 }

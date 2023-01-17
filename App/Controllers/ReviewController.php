@@ -25,11 +25,33 @@ class ReviewController extends AControllerBase
     {
         $data = $this->request()->getPost();
         if (isset($data["name"])) {
+
+            $name = $_POST['name'];
+            $text = $_POST['text'];
+            $dispatchable = true;
+            $required = "Toto pole musí byť vyplnené!";
+
+            if (empty($name)) {
+                $dispatchable = false;
+                $error['nameError'] = $required;
+            }
+
+            if (empty($text)) {
+                $dispatchable = false;
+                $error['textError'] = $required;
+            }
+
+
             $review = new Review();
             $review->setName($data["name"]);
             $review->setText($data["text"]);
-            $review->save();
-            return $this->redirect("?c=review");
+
+            if ($dispatchable) {
+                $review->save();
+                return $this->redirect("?c=review");
+            } else {
+                return $this->html($error);
+            }
         }
         return $this->html();
     }
